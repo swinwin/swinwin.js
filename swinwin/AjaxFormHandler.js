@@ -22,10 +22,7 @@
 			var type = _$form.attr('method');
 			
 			_$form.children('input, select').each(function(i) {
-				
 				var o = new Object();
-				var attr = this.attributes;
-				attr['value']= $(this).val();
 				 $.each(this.attributes, function(i, attrib){
 				    o[attrib.name] = attrib.value;
 				  });
@@ -33,8 +30,6 @@
 				  if(o.placeholder == $(this).val()) o['value'] = ""
 				  data[this.name]= o;
 			 });
-			
-			console.log(data)
 			
 		    $.ajax({
 			  type: type,
