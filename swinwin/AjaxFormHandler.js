@@ -27,6 +27,7 @@
 				    o[attrib.name] = attrib.value;
 				  });
 				  o['value'] = $(this).val();
+				  o['nodeName'] = $(this)[0].nodeName;
 				  if(o.placeholder == $(this).val()) o['value'] = ""
 				  data[this.name]= o;
 			 });
