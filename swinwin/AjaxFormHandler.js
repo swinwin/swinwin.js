@@ -12,7 +12,7 @@
 		init();
 		
 		function init(){
-			_$form.submit(_instance, function(event){onSend(event); return false})
+			_$form.submit(_instance, function(event){onSend(event); return false;})
 		}
 		
 		function onSend(event){
@@ -26,11 +26,15 @@
 				 $.each(this.attributes, function(i, attrib){
 				    o[attrib.name] = attrib.value;
 				  });
-				  o['value'] = $(this).val();
+				  
+				  if(this.type == "checkbox") o['value'] = $(this)[0].checked;
+				  else o['value'] = $(this).val();
 				  o['nodeName'] = $(this)[0].nodeName;
 				  if(o.placeholder == $(this).val()) o['value'] = ""
 				  data[this.name]= o;
 			 });
+			 
+			 
 			
 		    $.ajax({
 			  type: type,

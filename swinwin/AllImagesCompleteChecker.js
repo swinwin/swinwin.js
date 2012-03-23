@@ -18,7 +18,6 @@
 				var image = new Image()
 				image.src = imageSourceArray[i]
 			}
-			console.log('checkinitend')
 		}
 		
 		this.check = function() {
